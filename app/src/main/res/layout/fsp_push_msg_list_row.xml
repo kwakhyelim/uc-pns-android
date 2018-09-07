@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ListView의 행(Row)마다 적용될 layout -->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/pushMsgRowLayout" 
+	android:orientation="horizontal" 
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent"
+	android:layout_weight="1" 
+	android:gravity="left|center_vertical"
+	style="@style/FSPTheme.list.pushMsgRowBg">
+
+       <ImageView 
+	       	android:layout_height="32dip" 
+	       	android:id="@+id/imgPushMsgType" 
+	       	android:gravity="center_vertical" 
+	       	android:layout_width="32dip" 
+	       	android:layout_marginLeft="10dip"/>
+       
+	   <LinearLayout 
+        	android:orientation="vertical" 
+        	android:layout_weight="1" 
+        	android:layout_width="0dip"
+        	android:layout_height="wrap_content">
+        	<LinearLayout
+        	    android:layout_width="fill_parent"
+        	    android:layout_height="0dip" 
+	        	android:gravity="center_vertical" 
+	        	android:orientation="horizontal" 
+	        	android:layout_weight="1">
+	            <TextView  
+	            	android:id="@+id/txtMsg" 
+	            	android:layout_width="0dip" 
+	            	android:layout_height="wrap_content" 
+	            	android:layout_marginLeft="10dip"
+	            	style="@style/FSPTheme.list.pushMsgName"
+	            	android:textColor="@color/fsp_list_row_text"
+	            	android:singleLine="true"
+	            	android:layout_weight="1">
+	            </TextView>
+	            <!--  화살표 모양 수정 --> 
+		        <ImageView 
+		        	android:gravity="right" 
+		        	android:layout_width="wrap_content" 
+		        	android:layout_height="wrap_content" 
+		        	android:layout_marginRight="7dip"
+		        	android:background="@drawable/fsp_list_row_arrow"
+		        	android:layout_marginLeft="3dip">
+		        </ImageView>
+	         </LinearLayout>
+	         
+	         <LinearLayout
+        	    android:layout_width="fill_parent" 
+	        	android:gravity="center_vertical" 
+	        	android:orientation="horizontal" 
+	        	android:layout_weight="1" 
+	        	android:layout_height="0dip">
+	            <TextView 
+	            	android:layout_weight="1"
+	            	android:layout_width="0dip"
+	            	android:layout_height="wrap_content" 
+	            	android:id="@+id/txtSendName" 
+					style="@style/FSPTheme.list.pushMsgDesc"
+					android:textColor="@color/fsp_list_row_text"
+					android:layout_gravity="center_vertical"
+	            	android:layout_marginLeft="10dip">
+	            </TextView>
+	            <ImageView 
+			        android:id="@+id/imgNew"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:background="@drawable/fsp_push_msg_new"
+			        android:layout_gravity="center_vertical"
+			        android:visibility="visible"/>	
+			    <!-- 
+			    	 <TextView                 
+			    	 android:id="@+id/txtview"                 
+			    	 android:autoLink="web"                 
+			    	 android:layout_width="fill_parent"                 
+			    	 android:layout_height="fill_parent"                 
+			    	 android:text="put your link here"/> 
+			    	 
+			    	 textcontent.setText(Html.fromHtml(item.get_text())); 
+			    	 textcontent.setAutoLinkMask(Linkify.WEB_URLS); 
+			     -->
+	            <TextView 
+	            	android:layout_width="wrap_content" 
+	            	android:layout_height="wrap_content" 
+	            	android:id="@+id/txtSendTime" 
+					style="@style/FSPTheme.list.pushMsgDesc"
+					android:textColor="@color/fsp_list_row_text"
+					android:layout_marginLeft="2dip"
+	            	android:layout_marginRight="10dip"
+	            	android:layout_gravity="right|center_vertical">	
+	            </TextView>
+	          </LinearLayout>   
+        </LinearLayout>     
+</LinearLayout>

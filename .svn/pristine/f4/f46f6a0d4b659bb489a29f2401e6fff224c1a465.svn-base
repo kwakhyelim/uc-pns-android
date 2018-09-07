@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ListView의 행(Row)마다 적용될 layout -->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/menuRowLayout" 
+	android:orientation="vertical" 
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent"
+	style="@style/FSPTheme.list.menuRowBg">
+	
+	<!-- 각 행(row)의 시작은 ImageView -->
+    <LinearLayout 
+    	android:layout_height="fill_parent" 
+    	android:layout_width="fill_parent" 
+    	android:orientation="horizontal" 
+    	android:layout_weight="1" 
+    	android:gravity="left|center_vertical">
+    	
+        <ImageView 
+        	android:layout_height="32dip" 
+        	android:id="@+id/imgMenuIcon" 
+        	android:gravity="center_vertical" 
+        	android:layout_width="32dip" 
+        	android:layout_marginLeft="10dip">
+        </ImageView>
+       
+        <LinearLayout 
+        	android:layout_width="wrap_content" 
+        	android:gravity="center_vertical" 
+        	android:orientation="vertical" 
+        	android:layout_weight="1" 
+        	android:layout_height="wrap_content">
+            <TextView  
+            	android:id="@+id/txtMenuNm" 
+            	android:layout_height="wrap_content" 
+            	android:layout_marginLeft="10dip"
+            	style="@style/FSPTheme.list.menuName"
+            	android:textColor="@color/fsp_list_row_text"
+            	android:layout_width="fill_parent">
+            </TextView>
+            <TextView 
+            	android:layout_width="fill_parent" 
+            	android:layout_height="wrap_content" 
+            	android:id="@+id/txtMenuDesc" 
+				style="@style/FSPTheme.list.menuDesc"
+				android:textColor="@color/fsp_list_row_text"
+            	android:layout_marginTop="2dip"
+            	android:layout_marginLeft="10dip">
+            </TextView>
+        </LinearLayout>       
+        <!--  화살표 모양 수정 --> 
+        <ImageView 
+        	android:id="@+id/imgMenuArrow" 
+        	android:gravity="center_vertical" 
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+        	android:layout_marginRight="7dip"
+        	android:background="@drawable/fsp_list_row_arrow"
+        	android:layout_marginLeft="3dip">
+        </ImageView>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout
+ 	xmlns:android="http://schemas.android.com/apk/res/android"
+ 	android:id="@+id/mainWin"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+  	android:orientation="vertical">
+	<!--  타이틀 바 -->
+	<com.sz.fspmobile.view.TitleBarView 
+		android:layout_width="fill_parent" 
+		android:id="@+id/titleBar"
+		android:visibility="gone"
+		android:layout_height="35dip"/>
+	
+  	<LinearLayout 
+  		android:id="@+id/layoutTab"
+  		android:layout_width="fill_parent" 
+  		android:layout_height="57dp"
+  		android:orientation="horizontal"
+  		android:padding="0dp">
+  		<FrameLayout 
+  		    android:layout_height="fill_parent" 
+  		    android:layout_weight="1"
+  		    android:layout_width="0dp"
+  		    android:padding="0dp"
+  		    android:layout_margin="0dp">
+  		    <ImageButton
+			    android:id="@+id/imgTab1"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent" 
+				android:layout_margin="0dp"
+			/>
+  		    <RelativeLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent" 
+			    android:layout_margin="0dp">
+				<TextView 
+			        android:layout_width="5dip"
+			        android:layout_height="wrap_content"
+			        android:layout_centerHorizontal="true"
+			        android:id="@+id/not"
+			        android:visibility="invisible"/>
+			    <TextView
+			        android:id="@+id/txtNewCount"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="9dip"
+			        android:layout_toRightOf="@+id/not"
+			        android:gravity="center"
+			        style="@style/FSPTheme.pushMsgBadge"
+			        android:visibility="invisible"
+			        android:background="@drawable/fsp_push_msg_balloon" />
+			</RelativeLayout>    
+		</FrameLayout>	
+		<ImageButton
+		    android:id="@+id/imgTab2"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="fill_parent" 
+		/>
+		<ImageButton
+		    android:id="@+id/imgTab3"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="fill_parent" 
+		/>
+		<ImageButton
+		    android:id="@+id/imgTab4"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="fill_parent" 
+		/>
+	</LinearLayout>	
+		
+   	<!--  tab 처럼 표시될 영역 -->
+   	<FrameLayout android:id="@+id/tabcontent"
+   		android:layout_height="0dp"
+   		android:layout_weight="1"
+   		android:layout_width="fill_parent"
+   		style="@style/FSPTheme.list"> 
+   		
+   		<com.sz.fspmobile.activity.PushMessageDetailView
+   		    android:id="@+id/pushDetail"
+   		    android:layout_width="fill_parent" 
+   		    android:layout_height="fill_parent" 
+   		    android:visibility="gone"/>
+   		
+   		<!-- 리스트 영역 -->
+		<include 
+		    android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			layout="@layout/fsp_push_msg_list"
+		/>
+   	</FrameLayout>
+
+	<!--  메뉴 바 -->
+	<com.sz.fspmobile.view.MenuBarView 
+		android:layout_width="fill_parent" 
+		android:id="@+id/menuBar"
+		android:layout_height="53dip"/>  
+ </LinearLayout>		

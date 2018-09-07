@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+   	android:layout_height="match_parent"
+   	android:background="@null"
+   	
+    >
+
+			<LinearLayout
+		        android:layout_width="275dp"
+		        android:layout_height="wrap_content"	    
+		        android:layout_centerInParent="true"
+		        android:layout_gravity="center_horizontal"
+		        
+		        android:orientation="vertical"
+			    >
+		        <RelativeLayout 
+			        android:layout_width="match_parent"
+			        android:layout_height="45dp"	 
+					android:background="@drawable/system_popup_back_top"
+		            >
+<!-- 		            <ImageView  -->
+<!-- 		                android:id="@+id/imgTitleIcon" -->
+<!-- 				        android:layout_width="wrap_content" -->
+<!-- 				        android:layout_height="fill_parent" -->
+<!-- 		                android:layout_marginLeft="20dp" -->
+<!-- 		                android:layout_alignParentLeft="true" -->
+<!-- 				        android:layout_centerVertical="true" -->
+<!-- 				        android:src="@drawable/pop_icon02" -->
+<!-- 				        android:background="@null" -->
+<!-- 		                /> -->
+			        <TextView
+			            android:id="@+id/txtTit"
+				        android:layout_width="wrap_content"
+				        android:layout_height="fill_parent"
+				        android:layout_marginLeft="20dp"
+				        android:gravity="left|center_vertical"
+				        android:layout_alignParentLeft="true"
+				        android:layout_centerVertical="true"
+				        android:text="222"
+				        android:textColor="#ffffff"
+				        android:textSize="20sp"
+				        android:textStyle="bold"
+			            />
+			        <ImageButton 
+						android:id="@+id/btnClose"
+			            android:layout_width="wrap_content" 
+			            android:layout_height="fill_parent"
+			            android:layout_alignParentRight="true"
+			            android:layout_centerInParent="true"
+			            android:paddingLeft="15dp"
+			            android:paddingRight="20dp"
+			            android:src="@drawable/pop_btn_close"
+			            android:background="@null"
+			            android:contentDescription="@null"
+			            
+			            />
+		        </RelativeLayout>
+
+				<LinearLayout 
+		            android:layout_width="fill_parent" 
+		            android:layout_height="90dp"
+		            android:paddingLeft="25dp"
+		            android:paddingRight="25dp"
+		            android:gravity="center"
+		            android:background="@drawable/popup_back_m"
+				    >
+					<TextView 
+					    android:id="@+id/txtMessage"
+			            android:layout_width="fill_parent" 
+			            android:layout_height="fill_parent"
+			            android:gravity="center"
+			            android:text="test"
+			            android:textSize="16sp"
+			            android:textColor="#818993"
+			            android:maxLines="3"
+					    />
+				</LinearLayout>
+				<FrameLayout 
+		            android:layout_width="wrap_content" 
+		            android:layout_height="wrap_content"				    
+				    >
+					<LinearLayout 
+					    android:id="@+id/layoutConfirm"
+			            android:layout_width="fill_parent" 
+			            android:layout_height="37.5dp"
+			            android:gravity="center_horizontal"
+			            android:background="@drawable/popup_back_btm"
+					    >
+					    <Button 
+					        android:id="@+id/btnConfirm"
+					        android:layout_width="wrap_content" 
+			            	android:layout_height="fill_parent"
+			            	android:gravity="center"
+			            	android:text="확인"
+			            	android:textSize="14sp"
+			            	android:textColor="#818993"
+			  				android:background="@drawable/system_popup_btn_left"
+					        />
+					    <Button 
+					        android:id="@+id/btnCancel"
+					        android:layout_width="wrap_content" 
+			            	android:layout_height="fill_parent"
+			            	android:gravity="center"
+			            	android:text="취소"
+			            	android:textSize="14sp"
+			            	android:textColor="#818993"
+							android:background="@drawable/system_popup_btn_right"
+					        />
+					    
+					</LinearLayout>
+					<LinearLayout 
+					    android:id="@+id/layoutAlert"
+			            android:layout_width="fill_parent" 
+			            android:layout_height="37.5dp"
+			            android:gravity="center_horizontal"
+			            android:background="@drawable/popup_back_btm"
+					    >
+					    <Button 
+					        android:id="@+id/btnOk"
+					        android:layout_width="wrap_content" 
+			            	android:layout_height="fill_parent"
+			            	android:gravity="center"
+			            	android:text="확인"
+			            	android:textSize="14sp"
+			            	android:textColor="#818993"
+			  				android:background="@drawable/system_popup_btn_full"
+					        />
+					</LinearLayout>
+				</FrameLayout>
+
+			</LinearLayout>
+
+
+</RelativeLayout>

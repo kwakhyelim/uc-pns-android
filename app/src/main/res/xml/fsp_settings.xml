@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fsp-setting>
+	<item id="grp1" 
+		group="true" 
+		name="개인정보"/>
+	<item id="autoLogin" 
+		name="자동로그인" 
+		desc="실행시 암호를 입력하도록 하는 잠금 기능" 
+		icon="fsp_setting_auto_login"/>	
+	<item id="screenLock" 
+		name="화면잠금" 
+		desc="접속중 다음의 시간이 지나면 화면을 잠금 하는 기능" 
+		icon="fsp_setting_screen_lock"/>
+	<item id="sendLog" 
+		name="로그전송" 
+		desc="서버에 자신의 로그 데이터를 전송하는 기능" 
+		icon="setting_send_log"/>	
+	<item id="useGps" 
+		name="GPS서비스를 사용한 위치 정보 전송" 
+		desc="서버에 자신의 위치정보를 전송하는 기능" 
+		icon="setting_use_gps"/>	
+	<item id="grpPush" 
+		name="알림설정" group="true"/>	
+	<item id="usePush" 
+		name="푸시서비스" 
+		desc="푸시서비스 사용여부를 설정" 
+		icon="setting_use_push"/>	
+	<item id="pushNotify" 
+		name="알림방법" 
+		desc="푸시서비스 사용시 소리/진동의 알림방법 설정" 
+		icon="setting_push_notify"/>	
+	<item id="grp3" 
+		name="기본정보" group="true"/>
+	<item id="notice" 
+		name="공지사항" 
+		desc="업데이트 등 서비스 정보 알림" 
+		icon="setting_notice"/>	
+	<item id="ver" 
+		name="버전정보" 
+		desc="어플리케이션 버전 정보 확인" 
+		icon="setting_ver"/>	
+	<item id="projectInfo" 
+		name="프로젝트 정보" 
+		desc="APP에 대한 상세 정보 제공" 
+		icon="setting_notice"/>			
+	<item id="fspmobile" 
+		name="FSPmobile" 
+		desc="서비스 이용 안내 및 FAQ" 
+		icon="setting_notice"/>													
+</fsp-setting>

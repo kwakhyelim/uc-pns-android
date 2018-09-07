@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--  인트로 화면  : fsp 는 제외 가능 -->
+    <string name="fsp_layout_intro">intro</string>
+    <!--  a 타입 메뉴  -->
+    <string name="fsp_layout_menu">menu</string>
+    <!--  메뉴의 그룹 정보  -->
+    <string name="fsp_layout_menu_list_header">list_header</string>
+    <!--  셋팅 정보의  그룹 -->
+    <string name="fsp_layout_setting_list_header">list_header</string>
+    
+</resources>

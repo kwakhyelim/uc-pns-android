@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--  dialog의 닫기 버튼 글자 -->
+    <string name="fsp_btn_close">close</string>
+    <!--  정상적인 상황에서 경고 등의 메시지를 표시 후 프로그램이 종료될 때 -->
+    <string name="fsp_btn_alert_close">ok</string>
+    <!--  확인 메시지창의 OK 버튼  -->
+    <string name="fsp_btn_confirm_ok">ok</string>
+    <!--  확인 메시지창의 cancel 버튼  -->
+    <string name="fsp_btn_confirm_cancel">cancel</string>
+    <!-- alert dialog의 타이틀 -->
+    <string name="fsp_pop_title_alert">ok</string>
+    <!-- confirm dialog의 타이틀 -->
+    <string name="fsp_pop_title_confirm">confirm</string>
+    <!-- web alert dialog의 타이틀 -->
+    <string name="fsp_web_title_alert">information</string>
+    <!-- web confirm dialog의 타이틀 -->
+    <string name="fsp_web_title_confirm">ok</string>
+
+	<!-- 표시할 요일 문자열 : 일요일부터 시작   -->
+	<string-array name="fsp_daysString">
+		<item>Sunday</item>
+		<item>Monday</item>
+		<item>Tuesday</item>
+		<item>Wednesday</item>
+		<item>Thursday</item>
+		<item>Friday</item>
+		<item>Saturday</item>
+	</string-array>
+    
+    <!-- 날짜 표시 방법  -->
+    <string name="fsp_dateFormat">MM.dd</string>
+    
+    <!--  메시지 목록에 표시할 일자 포맷 -->
+    <string name="fsp_msgDateFormat">yyyy/MM/dd HH:mm</string>
+    
+<!-- 공통 : 처리중입니다.  -->
+	<string name="fsp_wating">please wait..</string>
+<!-- 메뉴 : 서브 메뉴의 메뉴가 존재하지않을 경우 사용할 텍스트  -->
+	<string name="fsp_menu_sub_empty">empty menu</string>	
+<!--  스크릭 락 시 비밀번호 입력 화면 -->    
+    <!--  스크린 락 시에 비밀번호 입력 요구 -->
+    <string name="fsp_in_lb_scrn_lock_pwd">비밀번호를 입력하여 주십시오.</string>
+    <!-- 스크린 락 시 비밀번호 입력 화면 타이틀 -->
+    <string name="fsp_pop_title_scrn_lock_pwd">화면잠금 해제</string>
+   
+<!-- 로그인 화면 -->
+	<string name="fsp_login_lb_id">User ID</string>
+	<string name="fsp_login_lb_pwd">Password</string>
+	<string name="fsp_login_lb_pin">Key-Number 입력시 바로 로그인됩니다.</string>
+
+<!--  보안 설정 화면  -->
+	<string name="fsp_device_policy_explan">Please activite device policy.</string>
+	
+<!--  타이틀 : 환경설정 페이지   -->
+	<string name="fsp_title_setting">Setting</string>	
+	<string name="fsp_title_setting_lock">개인정보 화면잠금 설정</string>	
+	<string name="fsp_title_setting_pushnotify">알림설정 알림방법 설정</string>	
+	
+<!--  환경 설정의 화면 잠금에 사용 -->
+	<string name="fsp_setting_lb_lockyn">화면잠금여부</string>
+	<string name="fsp_setting_lb_locktime">화면잠금시간</string>
+	<string name="fsp_setting_lb_locksec">초</string>
+	<string name="fsp_setting_lb_lockmin">분</string>
+	<string name="fsp_setting_lb_lockpwd">비밀번호설정</string>
+	<string name="fsp_setting_lb_lockpwd2">비밀번호확인</string>
+	
+	<string name="fsp_setting_lb_pushnotify">알림방법</string>
+	<string name="fsp_setting_lb_pushsound">소리</string>
+	<string name="fsp_setting_lb_pushvibrate">진동</string>
+	
+<!-- 디바이스 신청 정보 화면 -->
+	<string name="fsp_dev_request_lb_userid">사용자아이디</string>
+	<string name="fsp_dev_request_lb_pwd">비밀번호</string>
+	<string name="fsp_dev_request_lb_mobileno">전화번호</string>
+	<string name="fsp_dev_request_btn_request">신청하기</string>
+	<string name="fsp_dev_request_btn_cancel">취소</string>		
+	<string name="fsp_dev_request_btn_confirm">확인하기</string>
+	<string name="fsp_dev_request_btn_close">취소</string>
+	<string name="fsp_dev_request_lb_notice">사용을 위하여 디바이스를 먼저 등록해 주십시오.</string>
+	<string name="fsp_dev_request_wating">앱을 사용하기 위해 준비중입니다.</string>	
+	<string name="fsp_file_wating">앱을 사용하기 위해 초기 파일을 준비중입니다.</string>  
+	
+<!--  타이틀 : 메시지 페이지   -->
+	<string name="fsp_title_push_msg">Message</string>		
+
+<!--  푸시 메시지   -->
+	<string name="fsp_push_msg_add_schedule">일정추가</string>		
+	<string name="fsp_push_msg_start_dt">시작 : </string>	
+	<string name="fsp_push_msg_end_dt">종료 : </string>	
+	<string name="fsp_push_msg_location">장소 : </string>	
+	<string name="fsp_push_msg_search">검색결과</string>
+	<string name="fsp_push_msg_search_cond">검색조건을 선택하세요.</string>
+	<string name="fsp_push_msg_type_u">긴급</string>
+	<string name="fsp_push_msg_type_t">투두</string>
+	<string name="fsp_push_msg_type_n">일반</string>
+	<string name="fsp_push_msg_type_o">공지</string>
+	<string name="fsp_push_msg_delete_title">모두삭제</string>
+<!--  푸시 메시지 티커  -->
+	<string name="fsp_push_ticker_text">메시지가 왔습니다.</string>	
+  <string name="fsp_push_notification_text">신규 메시지 : </string> 	
+<!--  서버 접속 선택 -->
+	<string name="fsp_select_server">접속할 서버를 선택해 주십시오.</string>
+</resources>

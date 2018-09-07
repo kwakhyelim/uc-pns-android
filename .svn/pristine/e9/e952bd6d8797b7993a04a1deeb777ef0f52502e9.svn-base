@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">pns</string>
+    <string name="search_hint">휴대폰번호</string>
+    
+    <string name="lbl_user_gbn">사용자구분</string>
+    <string name="lbl_student">학생</string>
+    <string name="lbl_user_id">학번</string>
+    <string name="lbl_email">이메일주소</string>
+    <string name="lbl_password">비밀번호(학내시스템비밀번호)</string>
+    <string name="lbl_current_password">현재 비밀번호</string>
+    <string name="lbl_change_password">변경 비밀번호</string>
+    <string name="lbl_password_confirm">비밀번호 확인</string>
+    <string name="lbl_brn">사업자번호</string>
+    <string name="lbl_cert_no">인증번호</string>
+    <string name="lbl_customer_name">고객명</string>
+    <string name="lbl_mobile_no">휴대폰번호</string>
+    <string name="lbl_discount_amount">할인금액</string>
+    <string name="lbl_available_period">유효기간</string>
+    <string name="lbl_application_type">신청구분</string>
+    <string name="lbl_application_content">신청내용</string>
+
+    <string name="txt_login_info">Shop Manager 서비스 신청시 등록한 이메일주소와 비밀번호를 입력해 주세요.</string>
+
+	<string name="result_text">Found plain text</string>
+
+	<string name="esn_progress">처리중입니다.</string>
+		<string name="progress_message">잠시만 기다려 주세요..</string>
+	<string name="dialog_tit_alert">안내</string>
+	<string name="dialog_tit_confirm">확인</string>
+	<string name="dialog_tit_request_failed">시스템 장애</string>
+	<string name="dialog_msg_request_failed">요청에 실패하였습니다. 잠시후 다시 시도하세요.</string>
+
+	<string name="msg_error">처리중 에러가 발생하였습니다. 잠시후 다시 시도하세요.</string>
+	<string name="default_description">default</string>
+	
+	<!-- Login -->
+	<string name="user_gbn_select_dialog">사용자 구분을 선택하세요.</string>
+	<string name="user_reg_intro_noti">wi:(앳위)에 등록되지 않은 사용자 입니다.\n통합정보시스템에서 사용자 추가정보를 조회하여 등록 합니다.</string>
+	
+	<!-- User Regist -->
+	<string name="lbl_user_regstep1_title">사용자 구분을 선택하세요.</string>
+	<string name="lbl_user_regstep1_btn1">학생</string>
+	<string name="lbl_user_regstep1_btn2">교수</string>
+	<string name="lbl_user_regstep1_btn3">조교</string>
+	<string name="lbl_user_regstep1_btn4">직원</string>	
+	<string name="lbl_regstep2_tab_title">학생정보</string>
+	<string name="lbl_regstep3_tab_title">학생정보</string>
+	<string name="lbl_regstep4_tab_title">학과정보</string>
+	<string name="lbl_regstep5_tab_title">강의정보</string>
+	<string name="lbl_regstep6_tab_title">가입동아리</string>
+	<string name="lbl_user_name">성명</string>
+
+	
+	<!-- Bunker -->
+	<string name="lbl_bunker_menu_notice">공지사항</string>
+	<string name="lbl_bunker_menu_blog">블로그</string>
+	<string name="lbl_bunker_menu_data">자료실</string>
+	<string name="lbl_bunker_menu_calendar">캘린더</string>
+	<string name="lbl_bunker_menu_chat">채팅</string>
+	
+	<!-- Chatting -->
+	<string name="pull_to_refresh_pull_label">이전 대화목록을 가져오려면 아래로 당기세요.</string>
+    <string name="pull_to_refresh_release_label">탭을 놓으면 이전 대화목록을 가져옵니다.</string>
+    <string name="pull_to_refresh_refreshing_label">이전 대화목록을 가져오고 있습니다...</string>
+    <string name="pull_to_refresh_tap_label">이전 대화내용 입니다.</string>
+    <string name="send_to_message_loc">님이 위치정보를 남겼습니다.</string>
+    <string name="send_to_message_emo">님이 스티커를 남겼습니다.</string>
+    <string name="send_to_message_pict">님이 사진을 남겼습니다.</string>
+    <string name="send_to_message_surv">님이 투표를 등록했습니다.</string>
+    <string name="send_to_message_read">님이 채팅방메시지확인.</string>
+    
+    <!-- Common -->
+    <string name="confirm_tit_loc_att">선택된 위치를 첨부하시겠습니까.</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ListView의 행(Row)마다 적용될 layout -->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/headerLayout" 
+	android:orientation="horizontal" 
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent"
+	android:gravity="left|center_vertical">
+        <LinearLayout 
+        	android:layout_width="wrap_content" 
+        	android:gravity="center_vertical" 
+        	android:orientation="vertical" 
+        	android:layout_weight="1" 
+        	style="@style/FSPTheme.list.headerBg">
+        	<!--  그룹명 -->
+            <TextView  
+		    	android:id="@+id/txtGrpNm" 
+		    	android:layout_height="wrap_content" 
+		    	android:layout_marginLeft="10dip" 
+		    	style="@style/FSPTheme.list.headerName"
+		    	android:layout_width="wrap_content">
+		    </TextView>
+        </LinearLayout>
+</LinearLayout>

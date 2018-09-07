@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="intro_text1">어플리케이션 보안 점검</string>
+    <string name="intro_text2">모바일 서버 및 서비스 점검</string>
+    <string name="intro_text3">단말기 보안인증 점검</string>
+    <string name="intro_text4">사용권한 확인</string>
+    <string name="pns_title">UC 알림</string>
+
+    <!-- 로그인 -->
+    <string name="hint_login_userid">로그인 아이디</string>
+	<string name="hint_login_password">비밀번호</string>
+	<string name="static_login_copyright">SOFTZAM copyright(c) 2017 all rights reserved</string>
+</resources>

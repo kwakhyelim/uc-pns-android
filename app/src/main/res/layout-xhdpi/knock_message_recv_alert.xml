@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+
+
+	<LinearLayout
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"	    
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+	    >
+        <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="45dp"	 
+			android:background="@drawable/system_popup_back_top"
+            >
+            <ImageView 
+                android:id="@+id/imgTitleIcon"
+		        android:layout_width="wrap_content"
+		        android:layout_height="fill_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true"
+		        android:layout_centerVertical="true"
+		        android:src="@drawable/setting_icon6"
+		        android:background="@null"
+                />
+			<TextView 
+                android:id="@+id/txtTitle"
+		        android:layout_width="wrap_content"
+		        android:layout_height="fill_parent"
+		        android:layout_marginLeft="15dp"
+		        android:gravity="center_vertical"
+		        android:layout_toRightOf="@+id/imgTitleIcon"
+		        android:textSize="15sp"
+		        android:textColor="#ffffff"
+		        android:text="새로운 메시지 도착!!!"
+			    />
+	        <ImageButton 
+				android:id="@+id/btnClose"
+	            android:layout_width="wrap_content" 
+	            android:layout_height="fill_parent"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerInParent="true"
+	            android:paddingLeft="15dp"
+	            android:paddingRight="20dp"
+	            android:src="@drawable/pop_btn_close"
+	            android:background="@null"
+	            android:contentDescription="@null"
+	            />
+        </RelativeLayout>
+
+		<LinearLayout 
+            android:layout_width="fill_parent" 
+            android:layout_height="90dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            
+            android:gravity="center"
+            android:background="@drawable/popup_back_m"
+		    >
+			<TextView 
+			    android:id="@+id/txtMessage"
+	            android:layout_width="fill_parent" 
+	            android:layout_height="fill_parent"
+	            android:gravity="center"
+	            android:text="test"
+	            android:textSize="16sp"
+	            android:textColor="#818993"
+	            android:maxLines="3"
+			    />
+		</LinearLayout>
+		<LinearLayout 
+		    android:id="@+id/layoutConfirm"
+            android:layout_width="fill_parent" 
+            android:layout_height="37.5dp"
+            android:gravity="center_horizontal"
+            android:background="@drawable/popup_back_btm"
+		    >
+		    <Button 
+		        android:id="@+id/btnConfirm"
+		        android:layout_width="wrap_content" 
+            	android:layout_height="fill_parent"
+            	android:gravity="center"
+            	android:text="메시지확인"
+            	android:textSize="14sp"
+            	android:textColor="#818993"
+  				android:background="@drawable/system_popup_btn_left"
+		        />
+		    <Button 
+		        android:id="@+id/btnCancel"
+		        android:layout_width="wrap_content" 
+            	android:layout_height="fill_parent"
+            	android:gravity="center"
+            	android:text="닫기"
+            	android:textSize="14sp"
+            	android:textColor="#818993"
+				android:background="@drawable/system_popup_btn_right"
+		        />
+		    
+		</LinearLayout>
+
+	</LinearLayout>
+			
+</RelativeLayout>

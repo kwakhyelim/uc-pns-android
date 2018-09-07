@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+		
+        <LinearLayout
+            android:id="@+id/layoutLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#ff393c46"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:textColor="#ff000000" >
+
+            <!-- include -->
+
+            <include
+                android:id="@+id/ic_leftslidemenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/leftslidemenu" />
+        </LinearLayout>
+     
+		<FrameLayout
+			android:id="@+id/layoutMain"
+			android:layout_width="fill_parent"
+			android:layout_height="match_parent"
+			android:background="#ffffffff"
+			>
+	              
+			<LinearLayout 
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"		
+		        android:background="@null"    
+		        android:orientation="vertical"
+			    >
+				
+				<RelativeLayout 
+				    android:id="@+id/layoutTitle"
+				    android:layout_width="match_parent"
+			    	android:layout_height="52.5dp"
+			    	android:background="#ffffff"
+				    >
+				    <ImageButton 
+					    android:id="@+id/btnLeftMenu"
+					    android:layout_width="0dp"
+				    	android:layout_height="fill_parent"
+				    	android:layout_alignParentLeft="true"
+				    	android:src="@drawable/btn_menu"
+				    	android:background="@null"
+				    	android:visibility="invisible"
+				        />
+					<ImageButton
+						android:id="@+id/btnMainTitle"
+						android:layout_width="wrap_content"
+						android:layout_height="fill_parent"
+						android:layout_marginLeft="20dp"
+						android:layout_alignParentLeft="true"
+						android:src="@drawable/bi"
+						android:background="@null"
+						android:visibility="gone"
+						/>
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:textColor="#ff6599D1"
+						android:textSize="18sp"
+						android:text="@string/pns_title"/>
+					<ImageButton
+						android:id="@+id/btnBack"
+						android:layout_width="42dp"
+						android:layout_height="fill_parent"
+						android:layout_alignParentLeft="true"
+						android:layout_marginLeft="10dp"
+						android:layout_centerVertical="true"
+						android:src="@drawable/seoultech_home"
+						android:background="@null"
+						/>
+				    <ImageButton 
+					    android:id="@+id/btnProfile"
+					    android:layout_width="0dp"
+				    	android:layout_height="0dp"
+				    	android:layout_alignParentRight="true"
+				    	android:layout_marginRight="10dp"
+				    	android:layout_centerVertical="true"
+				    	android:src="@drawable/profile"
+				    	android:visibility="invisible"
+				    	android:background="@null"
+				        />
+				</RelativeLayout>
+			    <ProgressBar
+				    android:id="@+id/progressBar"
+				    style="?android:attr/progressBarStyleHorizontal"
+				    android:layout_gravity="center"
+				    android:layout_width="fill_parent"
+				    android:layout_height="4dip"
+				    android:progressDrawable="@drawable/fsp_progress_web"
+				    android:maxHeight="8dip"    
+				    android:minHeight="8dip"    
+				    android:max="100"
+			     	/>
+			    <WebView 
+			        android:id="@+id/webview"
+				    android:layout_width="match_parent"
+				    android:layout_height="match_parent"
+					android:background="#ffffff"
+			        />	
+			</LinearLayout>
+	              <LinearLayout
+	                  android:id="@+id/ll_fragment"
+	                  android:layout_width="match_parent"
+	                  android:layout_height="wrap_content"
+	                  android:orientation="vertical"
+	                   >
+	              </LinearLayout>
+	
+	              <LinearLayout
+	                  android:id="@+id/ll_empty"
+	                  android:layout_width="fill_parent"
+	                  android:layout_height="fill_parent"
+	                  android:visibility="gone"
+	                  android:orientation="vertical"
+	                  android:background="#80000000" 
+	                  />
+			
+			
+	          </FrameLayout>		
+	</FrameLayout>
+ </LinearLayout>

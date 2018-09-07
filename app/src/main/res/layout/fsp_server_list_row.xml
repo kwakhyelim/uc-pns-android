@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ListView의 행(Row)마다 적용될 layout -->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/menuRowLayout" 
+	android:orientation="vertical" 
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent"
+	style="@style/FSPTheme.list.menuRowBg">
+	
+	<!-- 각 행(row)의 시작은 ImageView -->
+       <LinearLayout 
+       	android:layout_width="fill_parent" 
+       	android:gravity="center_vertical" 
+       	android:orientation="vertical" 
+       	android:layout_weight="1" 
+       	android:layout_height="wrap_content">
+           <TextView  
+           	android:id="@+id/txtServerNm" 
+           	android:layout_height="wrap_content" 
+           	android:layout_marginLeft="10dip"
+           	style="@style/FSPTheme.list.menuName"
+           	android:textColor="@color/fsp_list_row_text"
+           	android:layout_width="fill_parent">
+           </TextView>
+           <TextView 
+           	android:layout_width="fill_parent" 
+           	android:layout_height="wrap_content" 
+           	android:id="@+id/txtServerUrl" 
+			style="@style/FSPTheme.list.menuDesc"
+			android:textColor="@color/fsp_list_row_text"
+           	android:layout_marginTop="2dip"
+           	android:layout_marginLeft="10dip">
+           </TextView>     
+    </LinearLayout>
+</LinearLayout>

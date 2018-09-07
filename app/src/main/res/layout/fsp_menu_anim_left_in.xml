@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 
+	from-to
+	fromXDelta : 어느위치에서 애니메이션이 시작될지를 결정합니다.
+	toXDelta : 어느 위치까지 애니메이션을 통해 이동시킬지를 결정합니다.
+	duration : 얼마동안의 시간동안 실행할지를 결정합니다. 밀리세컨드 단위입니다.(1000 = 1초)
+	repeatCount : 반복횟수를 결정합니다. 속성이 있지않은경우 default로 1번 실행합니다.
+	
+	fromYDelta : y 시작 위치 
+	toYDelta : y 종료 위치 
+	 -->
+	<translate android:fromXDelta="100%p" android:toXDelta="0%p" android:duration="300"/>
+	<!-- 
+		fromAlpha : 어느정도의 알파값을 가지고 시작할지를 결정합니다.
+		toAlpha :  어느정도의 알파값까지 변경할지를 결정합니다. 0.0 : 투명 
+		여기서 알파값은 from과 to 모두 0 ~ 1 까지 지정할 수 있습니다. 
+		이 값을 조절하여 fade-in, fade-out 효과를 만들 수 있습니다. 
+		저같은 경우는 duration을 짧게해 깜빡이 효과로 사용하였죠.
+	 -->
+	<alpha android:fromAlpha="0.0" android:toAlpha="0.5" android:duration="300" />
+</set>

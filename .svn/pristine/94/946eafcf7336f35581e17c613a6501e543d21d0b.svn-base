@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/txtAlarmNm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="관심 알림글 푸시 설정"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageview"
+            android:layout_toEndOf="@+id/imageview" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fsp_transparent">#00000000</color>
+    <color name="fsp_white">#ffffffff</color>
+    <color name="fsp_gray1">#ff191919</color>
+    <color name="fsp_grayLine">#ff999999</color>
+    <color name="fsp_grayBg">#ffd7d7d7</color>
+</resources>
