@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
- <selector xmlns:android="http://schemas.android.com/apk/res/android">
-     <item android:state_pressed="true"  android:drawable="@drawable/system_popup_btn_left_p" /> <!-- pressed -->
-     <item android:state_selected="true" android:drawable="@drawable/system_popup_btn_left_p" /> <!-- focused -->
-     <item android:drawable="@drawable/system_popup_btn_left_n" /> <!-- default -->
- </selector>
