@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	     android:layout_width="match_parent"
+	     android:layout_height="match_parent"
+>
+
+	<LinearLayout
+			android:id="@+id/layoutID"
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingTop="@dimen/fsp_padding24"
+			android:paddingBottom="@dimen/fsp_padding24"
+			android:background="@drawable/login_bg"
+	>
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="140dp"
+				android:orientation="vertical"
+				android:gravity="center_horizontal"
+				android:background="@null"
+		>
+			<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="30dp"
+					android:src="@drawable/login_logo"
+					android:background="@null"
+					android:contentDescription="@null"
+					android:visibility="invisible"/>
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:orientation="vertical"
+				android:gravity="center_horizontal"
+				android:background="@null"
+				android:layout_gravity="center"
+		>
+			<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="100dp"
+					android:background="@drawable/login_input"
+					android:orientation="vertical"
+			>
+				<EditText
+						android:id="@+id/editUserId"
+						android:layout_width="match_parent"
+						android:layout_height="16dp"
+						android:layout_marginLeft="47dp"
+						android:layout_marginTop="19dp"
+						android:textSize="@dimen/fsp_fontsize45"
+						android:inputType="text"
+						android:textColorHint="#a0a0a0"
+						android:textColor="@color/fsp_black"
+						android:hint="학번 또는 사번 입력"
+						android:background="@null"
+				/>
+				<EditText
+						android:id="@+id/editUserPwd"
+						android:layout_width="match_parent"
+						android:layout_height="16dp"
+						android:layout_marginLeft="47dp"
+						android:layout_marginTop="32dp"
+						android:textSize="@dimen/fsp_fontsize45"
+						android:inputType="textPassword"
+						android:textColorHint="#a0a0a0"
+						android:textColor="@color/fsp_black"
+						android:hint="비밀번호 입력"
+						android:background="@null"
+				/>
+			</LinearLayout>
+
+			<ImageButton
+					android:id="@+id/btnLogin"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:layout_marginTop="@dimen/fsp_padding24"
+					android:src="@drawable/login_btn"
+					android:background="@null"
+			/>
+
+			<!--  아래의 아이디 저장, 비밀번호 저장  -->
+			<!-- <LinearLayout
+                             android:layout_width="match_parent"
+                             android:orientation="horizontal"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/fsp_padding30">
+
+                           <TextView style="@style/fsp_label"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:drawableLeft="@drawable/fsp_chk"
+                                     android:drawablePadding="@dimen/fsp_padding12"
+                                     android:clickable="true"
+                                     android:text="@string/fsp_login_save_id"
+                                     android:id="@+id/chkSaveUserId">
+                           </TextView>
+
+                           <TextView style="@style/fsp_label"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginLeft="@dimen/fsp_padding30"
+                                     android:drawableLeft="@drawable/fsp_chk"
+                                     android:drawablePadding="@dimen/fsp_padding12"
+                                     android:clickable="true"
+                                     android:text="@string/fsp_login_auto_login"
+                                     android:id="@+id/chkAutoLogin">
+                           </TextView>
+                         </LinearLayout>-->
+			<!--  check end  -->
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/fsp_padding30"
+					android:orientation="horizontal" android:visibility="gone">
+
+				<Switch
+						android:id="@+id/switchSaveUserId"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textOff=""
+						android:textOn=""
+						android:switchMinWidth="15sp"/>
+
+				<TextView
+						android:id="@+id/textSaveUserId"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="@dimen/fsp_padding24"
+						android:text="아이디저장"
+						android:textColor="#000"/>
+
+				<View
+						android:layout_width="0dp"
+						android:layout_height="0dp"
+						android:layout_weight="1"/>
+
+				<Switch
+						android:id="@+id/switchAutoLogin"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textOff=""
+						android:textOn=""
+						android:switchMinWidth="15sp"/>
+
+				<TextView
+						android:id="@+id/textAutoLogin"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="@dimen/fsp_padding24"
+						android:text="자동로그인"
+						android:textColor="#000"/>
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="40dp"
+					android:orientation="horizontal"
+					android:visibility="gone"
+			>
+				<ImageButton
+						android:id="@+id/btnFindIdPwd"
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:layout_height="match_parent"
+						android:src="@drawable/btn_findid"
+						android:background="@null"
+						android:visibility="gone"
+				/>
+				<ImageButton
+						android:id="@+id/btnRegister"
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:layout_height="match_parent"
+						android:src="@drawable/btn_join"
+						android:background="@null"
+						android:layout_gravity="left"
+						android:visibility="gone"
+				/>
+			</LinearLayout>
+		</LinearLayout>
+
+		<ImageButton
+				android:id="@+id/loginCopyright"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:src="@drawable/login_copyright"
+				android:background="@null"
+				android:contentDescription="@null"
+		/>
+	</LinearLayout>
+
+
+	<LinearLayout
+			android:id="@+id/layoutProgress"
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingTop="@dimen/fsp_padding24"
+			android:paddingBottom="@dimen/fsp_padding24"
+			android:background="@drawable/login_bg"
+			android:gravity="center_vertical"
+			android:visibility="gone"
+	>
+		<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="150dp"
+				android:layout_gravity="center"
+				android:src="@drawable/bi_alimtong"
+				android:background="@null"
+				android:contentDescription="@null"
+		/>
+	</LinearLayout>
+
+	<LinearLayout
+			android:id="@+id/layoutBack"
+			android:layout_width="fill_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/login_bg"
+			android:gravity="center_vertical"
+			android:orientation="vertical"
+			android:visibility="invisible">
+
+		<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginBottom="150dp"
+				android:background="@null"
+				android:contentDescription="@null"
+				android:src="@drawable/bi_alimtong" />
+	</LinearLayout>
+</FrameLayout>

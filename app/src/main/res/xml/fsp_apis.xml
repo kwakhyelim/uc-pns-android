@@ -4,7 +4,7 @@
 	<api name="sms" class="com.sz.fspmobile.api.SmsApi"/>
 	<api name="app" class="com.sz.fspmobile.api.AppApi"/>
 	<api name="mapp" class="com.sz.fspmobile.api.FSPmobileAppApi"/>
-	<api name="camera" class="com.sz.fspmobile.api.CameraApi"/>
+	<api name="camera" class="com.sz.fspmobile.api.image.MultipleImageSelectApi"/>
 	<api name="barcode" class="com.sz.fspmobile.api.BarcodeApi"/>
 	<api name="gps" class="com.sz.fspmobile.api.GpsApi"/>
 	<api name="notification" class="com.sz.fspmobile.api.NotificationApi"/>
@@ -12,17 +12,23 @@
 	<api name="contact" class="com.sz.fspmobile.api.ContactApi"/>
 	<api name="extApp" class="com.sz.fspmobile.api.ExtRunApi"/>	
 	<api name="file" class="com.sz.fspmobile.api.FileApi"/>	
-	<api name="scheduler" class="com.sz.fspmobile.api.SchedulerApi"/>		
-	<api name="bi300" class="com.sz.fspmobile.api.BI300Api"/>	
+	<api name="scheduler" class="com.sz.fspmobile.api.SchedulerApi"/>
 	<api name="database" class="com.sz.fspmobile.api.DatabaseApi"/>	
-	<api name="sensor" class="com.sz.fspmobile.api.SensorApi"/>	
-	<api name="sharedData" class="ac.uc.mobile.pns.fsp.ExtSharedDataApi"/>
-	<api name="screenCapture" class="com.sz.fspmobile.api.ScreenCaptureApi"/>
+	<api name="sensor" class="com.sz.fspmobile.api.SensorApi"/>
 	<api name="util" class="com.sz.fspmobile.api.UtilApi"/>
 	<api name="nfc" class="com.sz.fspmobile.api.NfcApi"/>
 	<api name="media" class="com.sz.fspmobile.api.MediaPlayApi"/>
 
-	<api name="doPopup" class="ac.uc.mobile.pns.APIPopupViewerPNS"/>
-	<api name="doDownload" class="ac.uc.mobile.pns.APIPopupViewerPNS"/>
-	<api name="doUrl" class="ac.uc.mobile.pns.APIPopupViewerPNS"/>
+	<api name="sharedData" class="ac.uc.mobile.pns.ExtSharedDataApi"/>
+
+	<!--
+	<api name="doDownload" class="ac.uc.mobile.pns.MyAPIPopupViewer/>
+	<api name="doUrl" class="ac.uc.mobile.pns.MyAPIPopupViewer/>
+	-->
+
+	<api name="doPopup" class="ac.uc.mobile.pns.MyAPIPopupViewer"/>
+	<api name="doDownload" class="com.sz.pns.fsp.APIPopupViewer"/>
+	<api name="doUrl" class="com.sz.pns.fsp.APIPopupViewer"/>
+	<api name="callExtApp" class="com.sz.pns.fsp.APIPopupViewer"/>
+	<api name="appConfig" class="com.sz.pns.fsp.APIPopupViewer"/>
 </fsp-apis>
