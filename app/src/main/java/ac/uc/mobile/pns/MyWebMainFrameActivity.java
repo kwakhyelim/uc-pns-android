@@ -98,21 +98,20 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
     // 아이디와 비밀번호가 저장되어 있는 경우 로그인 처리를 무조건 한다. -> 로그아웃 처리시 없어짐.
     if (!"".equals(Util.getSharedData("userId", ""))
         && !"".equals(Util.getSharedData("pwd", "")) ) {
+      getLogger().debug("### 로그인 처리 ");
       Util.setSharedData("autoLogin", "N");
       login(Util.getSharedData("userId", ""), Util.getSharedData("pwd", ""));
+    } else {  // 푸시 메시지 확인만 한다. -> 로그인 후 이동해야 한다. -> 로그인 액티비티에서 처리 후 이동
+      Bundle pushData = FSPConfig.getPushData();
+      if( pushData != null ) {
+        showLoginActivity("PUSH");  // 푸시 메시지를 처리하기 위해 로그인 처리
+      }
     }
   }
-
-  private boolean loadMain = false;
   /**
    * 메인 페이지 표시
    */
   protected void loadMainPage() {
-    if( loadMain ) {
-      return;
-    }
-
-    loadMain = true;
     String menuUrl = getFsp().getServerConfig().getBannerUrl();
       if (AppDataUtility.isNull(menuUrl)) {
       menuUrl =  getFsp().getServerConfig().getNoticeUrl();
@@ -202,6 +201,44 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
     }
   }
 
+  @Override
+  public void onHandleResults(int requestId, JSONObject json) {
+    try {
+      if (requestId == REQUEST_SVR_SELECT_NOREADMSG_CNT) {
+        String errorCode = json.getString("ErrorCode");
+        if ("0".equals(errorCode)) {
+
+          JSONArray jsonArray = json.getJSONArray("ds_output");
+          JSONObject jobj = jsonArray.getJSONObject(0);
+          int badgeCount = Integer.parseInt(jobj.getString("MSGNOTREADCNT"));
+
+          PushUtility.showBadgeCountInAppIcon(MyWebMainFrameActivity.this, badgeCount);
+
+          getFsp().forceClose();
+        }
+      } else if (requestId == REQUEST_SVR_SELECT_USER) {
+        if (HttpMessageHelper.isSuccessResult(json)) {
+          JSONObject jobj = json.getJSONObject("result");
+          Util.setSharedData("autoLogin", "Y");
+
+          boolean isAddSession = true;
+          if (isAddSession && jobj != null) {
+            CookieManager cookieManager = CookieManager.getInstance();
+            cookieManager.setAcceptCookie(true);
+            String domain = getFsp().getServerConfig().getServerRootUrl();
+            CookieManager.getInstance().setCookie(domain, "uc_auth=" + getSessionString(jobj));
+
+            System.out.println("COOKIE----> " + getSessionString(jobj));
+
+            checkPush();
+          }
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
   /**
    * 액티비티의 처리 결과를 리턴 받아야 할 경우에 호출되는 함수.<p>
    *
@@ -214,7 +251,9 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
     if (requestCode == 1000) { // 메인.
       if (resultCode == Activity.RESULT_OK) {
         String forward = data.getStringExtra("forward");
-        if ("PNSMAIN".equals(forward)) {  // pns 페이지 표시
+        if( "PUSH".equals(forward)) {
+          checkPush();
+        } else if ("PNSMAIN".equals(forward)) {  // pns 페이지 표시
           goOpenPage(null, "slide", forward);
         } else if ("SETUP".equals(forward)) { // 설정 페이지 이동
           Intent intent = new Intent(MyWebMainFrameActivity.this, PNSSettingActivity.class);
@@ -263,20 +302,21 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
         }
       }
     } else {  // 로그인 으로 이동
-      Intent intent = new Intent(this, MyPNSLoginActivity.class);
+      String forwardPage = "";
       if ("SETUP".equals(url)) {
-        intent.putExtra("forwardPage", "SETUP");
+        forwardPage = "SETUP";
       } else if( page != null && !page.equals("")){
-        intent.putExtra("forwardPage", page);
-      } else {
-        intent.putExtra("forwardPage", "MAIN");
+        forwardPage =  page;
       }
 
-      startActivityForResult(intent, 1000);
-      overridePendingTransition(R.anim.rightin, R.anim.leftout);
+      showLoginActivity(forwardPage);
     }
   }
 
+  /**
+   * 웹 페이지에서 팝업창을 닫는 용도.
+   * @param type
+   */
   public void goBackPage(String type) {
     int anim = 0;
     if ("slide".equals(type)) {
@@ -297,6 +337,20 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
   }
 
   /**
+   * 로그인 화면으로 이동한다.
+   * @param forwardPage
+   */
+  protected void showLoginActivity(String forwardPage) {
+    Intent intent = new Intent(this, MyPNSLoginActivity.class);
+    if( AppDataUtility.isNull(forwardPage)) {
+      forwardPage = "MAIN";
+    }
+
+    intent.putExtra("forwardPage", forwardPage);
+    startActivityForResult(intent, 1000);
+    overridePendingTransition(R.anim.rightin, R.anim.leftout);
+  }
+  /**
    * 페이지 새로고침 여부 확인하기.
    */
   protected void checkRefreshPage() {
@@ -305,52 +359,6 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
     if ("Y".equals(refYn)) {
       Util.setSharedData("reloadYn", "N");
       getCurrentWebView().getWebView().reload();
-    }
-  }
-
-
-  @Override
-  public void onHandleResults(int requestId, JSONObject json) {
-    try {
-      if (requestId == REQUEST_SVR_SELECT_NOREADMSG_CNT) {
-        String errorCode = json.getString("ErrorCode");
-        if ("0".equals(errorCode)) {
-
-          JSONArray jsonArray = json.getJSONArray("ds_output");
-          JSONObject jobj = jsonArray.getJSONObject(0);
-          int badgeCount = Integer.parseInt(jobj.getString("MSGNOTREADCNT"));
-
-          PushUtility.showBadgeCountInAppIcon(MyWebMainFrameActivity.this, badgeCount);
-
-          getFsp().forceClose();
-        }
-      } else if (requestId == REQUEST_SVR_SELECT_USER) {
-        if (HttpMessageHelper.isSuccessResult(json)) {
-          JSONObject jobj = json.getJSONObject("result");
-          Util.setSharedData("compLogin", "Y");
-
-          boolean isAddSession = true;
-          if (isAddSession && jobj != null) {
-            CookieManager cookieManager = CookieManager.getInstance();
-            cookieManager.setAcceptCookie(true);
-            String domain = getFsp().getServerConfig().getServerRootUrl();
-            CookieManager.getInstance().setCookie(domain, "uc_auth=" + getSessionString(jobj));
-
-            System.out.println("COOKIE----> " + getSessionString(jobj));
-
-            // 로그인 완료 후 신규 푸시 메시지가 존재하는지 확인
-            // 푸시 데이터 확인
-            Bundle pushData = FSPConfig.getPushData();
-
-            FSPConfig.removePushData();
-            if( pushData != null ) {
-              showPushMessage(pushData);
-            }
-          }
-        }
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
     }
   }
 
@@ -385,6 +393,20 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
     }
 
     return objJson.toString();
+  }
+
+  /**
+   * 푸시 데이터를 확인하여 이동한다.
+   */
+  protected void checkPush() {
+    // 로그인 완료 후 신규 푸시 메시지가 존재하는지 확인
+    // 푸시 데이터 확인
+    Bundle pushData = FSPConfig.getPushData();
+
+    FSPConfig.removePushData();
+    if( pushData != null ) {
+      showPushMessage(pushData);
+    }
   }
 
   protected void showPushMessage(Bundle data)  {

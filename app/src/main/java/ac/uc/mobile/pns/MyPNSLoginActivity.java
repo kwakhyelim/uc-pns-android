@@ -182,7 +182,7 @@ public class MyPNSLoginActivity extends PNSLoginActivity  {
       CookieManager.getInstance().setCookie(domain, "uc_auth=" + getSessionString(json));
     }
 
-    if("PNSMAIN".equals(forwardPage) || "SETUP".equals(forwardPage) ||  "MAIN".equals(forwardPage)) {
+    if( forwardPage != null ) {
       Intent intent = new Intent();
       intent.putExtra("forward", forwardPage);
       setResult(Activity.RESULT_OK, intent);
