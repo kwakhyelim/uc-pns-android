@@ -67,9 +67,10 @@ public class MyPNSLoginActivity extends PNSLoginActivity  {
       if (requestId == REQUEST_SVR_SELECT_USER) {
         if (HttpMessageHelper.isSuccessResult(json)) {
           loginChkCnt = 0;
+
+          Util.setSharedData("autoLogin", "Y");
           JSONObject jobj = json.getJSONObject("result");
           Util.setSharedData("serverRootUrl", getFsp().getServerConfig().getServerRootUrl());
-          Util.setSharedData("autoLogin", "Y");
           Util.setSharedData("userId", jobj.getString("userId"));
           Util.setSharedData("userGbn", jobj.getString("userGbn"));
           Util.setSharedData("userNm", jobj.getString("userNm"));

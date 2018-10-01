@@ -96,11 +96,31 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
     }
 
     // 아이디와 비밀번호가 저장되어 있는 경우 로그인 처리를 무조건 한다. -> 로그아웃 처리시 없어짐.
-    if (!"".equals(Util.getSharedData("userId", ""))) {
+    if (!"".equals(Util.getSharedData("userId", ""))
+        && !"".equals(Util.getSharedData("pwd", "")) ) {
+      Util.setSharedData("autoLogin", "N");
       login(Util.getSharedData("userId", ""), Util.getSharedData("pwd", ""));
     }
   }
 
+  private boolean loadMain = false;
+  /**
+   * 메인 페이지 표시
+   */
+  protected void loadMainPage() {
+    if( loadMain ) {
+      return;
+    }
+
+    loadMain = true;
+    String menuUrl = getFsp().getServerConfig().getBannerUrl();
+      if (AppDataUtility.isNull(menuUrl)) {
+      menuUrl =  getFsp().getServerConfig().getNoticeUrl();
+    }
+
+    String attrs = "agent=Softzam/FspMobile;initialScale=0;cookie=y;";
+    displayMenu(null, null, menuUrl, attrs);
+}
   /**
    * 로그인 처리.
    *
@@ -162,14 +182,7 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    String menuUrl = getFsp().getServerConfig().getBannerUrl();
-    if (AppDataUtility.isNull(menuUrl)) {
-      menuUrl =  getFsp().getServerConfig().getNoticeUrl();
-    }
-
-    String attrs = "agent=Softzam/FspMobile;initialScale=0;";
-    displayMenu(null, null, menuUrl, attrs);
+    loadMainPage();
   }
 
   /**
@@ -217,12 +230,12 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
   }
 
   public void goOpenPage(String url, String type, String page) {
-    if ("Y".equals(Util.getSharedData("autoLogin", ""))) {
+    if (Util.getSharedData("autoLogin", "N").equals("Y")) {  // autoLogin Y에서 변경 -> 로그인과 동일 조건으로
       if ("SETUP".equals(url)) {
         Intent intent = new Intent(MyWebMainFrameActivity.this, PNSSettingActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.rightin, R.anim.leftout);
-      } else if ("MAIN".equals(url)) {
+      } else if ("MAIN".equals(page)) { // main 에서 호출... 로그인 요청이다. -> 없어야 함.
 
       } else {
         int anim = 0;
@@ -314,6 +327,7 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
       } else if (requestId == REQUEST_SVR_SELECT_USER) {
         if (HttpMessageHelper.isSuccessResult(json)) {
           JSONObject jobj = json.getJSONObject("result");
+          Util.setSharedData("compLogin", "Y");
 
           boolean isAddSession = true;
           if (isAddSession && jobj != null) {
@@ -420,7 +434,7 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
   protected String getPnsMainUrl() {
     try {
       String returnUrl = getFsp().getServerConfig().getServerRootUrl()
-          + "/mobile/main_na.html?user_no="
+          + "/mobile/msglist.html?user_no=" // main_na.html
           + Util.getSharedData("userId", "")
           + "&user_gbn=" + Util.getSharedData("userGbn", "")
           + "&dvic_id=" + URLEncoder.encode(UserConfig.getSharedInstance().getDeviceID(), "UTF-8");
