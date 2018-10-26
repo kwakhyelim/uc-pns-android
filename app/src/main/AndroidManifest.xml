@@ -55,6 +55,7 @@
 
     <application
         android:name="com.sz.pns.PNSApplication"
+        android:allowBackup="false"
         android:icon="@drawable/fsp_icon"
         android:label="@string/fsp_appName"
         android:theme="@style/FSPTheme">
