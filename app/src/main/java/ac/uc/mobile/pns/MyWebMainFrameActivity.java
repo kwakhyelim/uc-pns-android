@@ -428,9 +428,10 @@ public class MyWebMainFrameActivity extends WebMainFrameActivity implements Netw
       String url = null;
 
       if( "Y".equals(securYn)) {  //  비밀
-        url = "/mobile/scrt.html?msg_no='${msg_no}'&msg_ctnt='${msg_ctnt}'&msg_recv_yn='${msg_recv_yn}'&user_no='${user_no}'&user_gbn='${user_gbn}'&msg_gbn='${msg_gbn}'";
+        url = "/mobile/scrt.html?msg_no=${msg_no}&msg_ctnt=${msg_ctnt}&msg_recv_yn=${msg_recv_yn}&user_no=${user_no}&user_gbn=${user_gbn}&msg_gbn=${msg_gbn}";
       } else {
-        url = "/mobile/view.html?msg_no='${msg_no}'&msg_ctnt='${msg_ctnt}'&msg_recv_yn='${msg_recv_yn}'&user_no='${user_no}'&user_gbn='${user_gbn}'&msg_gbn='${msg_gbn}'";
+        // url = "/mobile/view.html?msg_no='{msg_no}'&msg_ctnt='${msg_ctnt}'&msg_recv_yn='${msg_recv_yn}'&user_no='${user_no}'&user_gbn='${user_gbn}'&msg_gbn='${msg_gbn}'";
+        url = "/mobile/view.html?msg_no=${msg_no}&msg_ctnt=${msg_ctnt}&msg_recv_yn=${msg_recv_yn}&user_no=${user_no}&user_gbn=${user_gbn}&msg_gbn=${msg_gbn}";
       }
 
       url = url.replace("${user_no}", Util.getSharedData("userId", ""));
